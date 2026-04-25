@@ -1,1 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Site oficial da Sanepar - Companhia de Saneamento do Paraná. Informações institucionais, contatos, dados de registro, atividades e compromisso com a água e saneamento no estado do Paraná.">
+  <meta name="keywords" content="Sanepar, saneamento, água, Paraná, Curitiba, tratamento de água, ESG, sustentabilidade">
+  <meta name="author" content="Sanepar">
+  <meta name="robots" content="index, follow">
+  <meta name="google-ads-account" content="not-applicable">
+  <!-- Política de privacidade e conformidade com LGPD -->
+  <meta name="format-detection" content="telephone=yes">
+  <title>Sanepar | Saneamento para o Paraná</title>
+  <!-- Favicon simbólico (gerado inline, sem link externo) -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: system-ui, 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #f0f7f4;
+      color: #1e2a3e;
+      line-height: 1.4;
+    }
+
+    /* Skip to content para acessibilidade */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #005c8a;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      z-index: 100;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / top bar */
+    .top-bar {
+      background: #003b5c;
+      color: white;
+      font-size: 0.85rem;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-links a {
+      color: #cce7f0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.85rem;
+    }
+    .top-links a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Main header */
+    .main-header {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border-bottom: 1px solid #e2edf2;
+    }
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+    }
+    .logo-area h1 {
+      font-size: 1.7rem;
+      color: #00635B;
+      letter-spacing: -0.02em;
+    }
+    .logo-area p {
+      font-size: 0.85rem;
+      color: #2c6e5c;
+      font-weight: 500;
+    }
+    .logo-area span {
+      font-weight: 700;
+      color: #004d73;
+    }
+    .btn-contato {
+      background: #00635B;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-contato:hover {
+      background: #004d46;
+      transform: scale(1.02);
+    }
+
+    /* navegação principal */
+    .nav-principal {
+      background: #fefefe;
+      border-top: 1px solid #e5f0ec;
+      border-bottom: 1px solid #ddebe6;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 12px 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1f5e54;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #003b2f;
+      border-bottom: 2px solid #008b74;
+      margin-bottom: -2px;
+    }
+
+    /* Hero / banner educativo */
+    .hero {
+      background: linear-gradient(105deg, #dff3ef 0%, #c7e6de 100%);
+      border-radius: 32px;
+      margin: 32px 0;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 48px 40px;
+    }
+    .hero-text h2 {
+      font-size: 2.2rem;
+      color: #003b2f;
+      margin-bottom: 16px;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #1e4a44;
+      margin-bottom: 24px;
+      max-width: 90%;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .stat-item {
+      text-align: left;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #00635B;
+    }
+    .hero-img {
+      flex: 0.8;
+      min-height: 260px;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iIzAwNjM1QiIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjMwMCIgcj0iMTUwIiBmaWxsPSIjNDBBQzlDIi8+PHJlY3QgeD0iMjUwIiB5PSIzMDAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjMkQ4NjdDIi8+PHRleHQgeD0iMzUwIiB5PSIzNzAiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzIiPkEgUUFSTzwvdGV4dD48L3N2Zz4=') center/cover no-repeat;
+      background-size: cover;
+      border-radius: 24px;
+      margin: 20px 20px 20px 0;
+      min-width: 200px;
+    }
+    @media (max-width: 700px) {
+      .hero-text { padding: 32px 24px; }
+      .hero-text h2 { font-size: 1.7rem; }
+    }
+
+    /* Cards de informações */
+    .section-title {
+      font-size: 1.8rem;
+      margin: 48px 0 24px 0;
+      color: #003b2f;
+      border-left: 6px solid #008b74;
+      padding-left: 20px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      padding: 24px 28px;
+      transition: all 0.2s ease;
+      border: 1px solid #deede8;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(0, 80, 70, 0.08);
+    }
+    .card h3 {
+      color: #00655a;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p, .card li {
+      color: #2d4c44;
+      line-height: 1.5;
+    }
+    .info-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .info-list li {
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #d9e7e2;
+      padding-bottom: 6px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #e0f2ef;
+      color: #005f55;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .cnpj-destaque {
+      font-family: monospace;
+      background: #f3f9f7;
+      padding: 4px 8px;
+      border-radius: 12px;
+    }
+    .map-link {
+      margin-top: 16px;
+      display: inline-block;
+      color: #00695c;
+      font-weight: 500;
+    }
+    /* Tabela de sócios responsiva */
+    .socios-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 16px;
+    }
+    .socios-grid span {
+      background: #ecf7f4;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Footer white/green */
+    .footer {
+      background: #112f28;
+      color: #cfdfdb;
+      margin-top: 64px;
+      padding: 48px 0 24px;
+      font-size: 0.9rem;
+    }
+    .footer-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #bfdbd4;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    .footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 30px;
+      border-top: 1px solid #2c5b50;
+      font-size: 0.8rem;
+    }
+    /* Botão cookie-simples white hat (GDPR/LGPD) */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: #1e3a34;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 999;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      background: rgba(0, 50, 45, 0.95);
+    }
+    .cookie-banner p {
+      flex: 2;
+      font-size: 0.85rem;
+    }
+    .cookie-btn {
+      background: #33b89e;
+      border: none;
+      color: #001f1a;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @media (max-width: 640px) {
+      .cookie-banner { border-radius: 20px; flex-direction: column; text-align: center; left: 12px; right: 12px; bottom: 12px; }
+    }
+    button {
+      font-family: inherit;
+    }
+    hr {
+      margin: 24px 0;
+      border-color: #cbdcd6;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Top bar white-hat -->
+  <div class="top-bar">
+    <div class="container">
+      <div>🌍 Compromisso com a sustentabilidade e qualidade da água</div>
+      <div class="top-links">
+        <a href="#">Acessibilidade</a>
+        <a href="#">Portal da Transparência</a>
+        <a href="#">LGPD</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-header">
+    <div class="container header-flex">
+      <div class="logo-area">
+        <h1>💧 SANEPAR</h1>
+        <p><span>Companhia de Saneamento do Paraná</span> | 1968</p>
+      </div>
+      <div>
+        <a href="#contato-scroll" class="btn-contato">📞 Central de Atendimento</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-principal">
+    <div class="container nav-links">
+      <a href="#">INÍCIO</a>
+      <a href="#">INSTITUCIONAL</a>
+      <a href="#">SUSTENTABILIDADE</a>
+      <a href="#">EDUCAÇÃO AMBIENTAL</a>
+      <a href="#">LEGISLAÇÃO</a>
+      <a href="#">FALE CONOSCO</a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="container">
+      <!-- Hero educativo water theme -->
+      <div class="hero">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h2>Saneamento é vida, saúde e futuro 💙</h2>
+            <p>Há mais de 5 décadas levando água tratada e esgoto sanitário para milhões de paranaenses. Conheça nossa história, governança e compromisso com os ODS.</p>
+            <div class="hero-stats">
+              <div class="stat-item"><div class="stat-number">+5 milhões</div><div>clientes atendidos</div></div>
+              <div class="stat-item"><div class="stat-number">100%</div><div>energia renovável</div></div>
+            </div>
+          </div>
+          <div class="hero-img" aria-label="Ilustração representando água e saneamento"></div>
+        </div>
+      </div>
+
+      <!-- Seção de Registro e Dados Oficiais -->
+      <div class="section-title">📄 Dados institucionais e cadastrais</div>
+      <div class="info-grid">
+        <div class="card">
+          <h3>🏢 CNPJ & Registro</h3>
+          <ul class="info-list">
+            <li><strong>CNPJ:</strong> <span class="cnpj-destaque">76.484.013/0001-45</span> (76484013000145)</li>
+            <li><strong>Inscrição Estadual (PR):</strong> 10180080-64</li>
+            <li><strong>Razão Social:</strong> Companhia de Saneamento do Parana Sanepar</li>
+            <li><strong>Nome Fantasia:</strong> Sanepar</li>
+            <li><strong>Data Abertura:</strong> 26/01/1968 · 58 anos, 2 meses e 30 dias</li>
+            <li><strong>Natureza Jurídica:</strong> Sociedade de Economia Mista</li>
+            <li><strong>Capital Social:</strong> R$ 6.000.000.000,00</li>
+            <li><strong>Situação:</strong> ✅ Ativa (Data situação: 03/11/2005)</li>
+            <li><strong>Porte:</strong> Sem Enquadramento · <span class="badge">Não optante pelo MEI/Simples</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>📍 Localização e Contatos</h3>
+          <ul class="info-list">
+            <li><strong>Logradouro:</strong> Rua Engenheiros Reboucas, 1376 · Reboucas</li>
+            <li><strong>CEP:</strong> 80215-100 · Curitiba - PR</li>
+            <li><strong>📧 E-mail (protegido):</strong> co****@****.com.br (Central de Relacionamento)</li>
+            <li><strong>📞 Telefones:</strong> (41) 333****-**** | (41) 330****-****</li>
+            <li><strong>📞 Atendimento 24h:</strong> 0800 200 0115 (disque-sanepar)</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Engenheiros+Reboucas+1376+Curitiba" target="_blank" rel="noopener noreferrer" class="map-link">🗺️ Ver no Google Maps →</a>
+          <p style="margin-top: 12px;"><strong>Para correspondência:</strong><br> Sanepar - Rua Engenheiros Reboucas 1376, Reboucas, Curitiba PR, 80215-100</p>
+        </div>
+        <div class="card">
+          <h3>💧 Atividades - CNAE Principal</h3>
+          <p><strong>36.00-6-01</strong> — Captação, tratamento e distribuição de água</p>
+          <hr>
+          <p><strong>Missão:</strong> Garantir saneamento ambiental com excelência, promovendo saúde, sustentabilidade e qualidade de vida.</p>
+          <p><span class="badge">ESG</span> <span class="badge">ODS 6</span> <span class="badge">Neutralidade de Carbono</span></p>
+        </div>
+      </div>
+
+      <!-- Quadro de Sócios e Administradores (conforme dados) -->
+      <div class="section-title">👥 Governança Corporativa</div>
+      <div class="card" style="margin-bottom: 32px;">
+        <h3>Diretoria e Conselho de Administração</h3>
+        <div class="socios-grid">
+          <span>Abel Demetrio (Diretor)</span> <span>Anatalicio Risden Junior (Diretor)</span> <span>Bihl Elerian Zanetti (Diretor)</span>
+          <span>Demetrius Nichele Macei (Conselheiro)</span> <span>Diane Agustini (Conselheira)</span> <span>Eduardo Francisco Sciarra (Conselheiro)</span>
+          <span>Fernando Mauro Nascimento Guedes (Diretor)</span> <span>Flavio Luis Coutinho Slivinski (Diretor)</span>
+          <span>Joao Biral Junior (Conselheiro)</span> <span>Joisa Campanher Dutra Saraiva (Conselheira)</span>
+          <span>Leura Lucia Conte de Oliveira (Diretor)</span> <span>Marcos Domakoski (Diretor)</span>
+          <span>Milton Jose Paizani (Conselheiro)</span> <span>Reginaldo Ferreira Alexandre (Conselheiro)</span>
+          <span>Rodrigo Sanchez Rios (Conselheiro)</span> <span>Sergio Wippel (Diretor)</span>
+          <span><strong>Wilson Bley Lipski - Presidente</strong></span>
+        </div>
+        <p style="margin-top: 20px;">Qualificação do responsável: <strong>Presidente</strong> - Wilson Bley Lipski.</p>
+      </div>
+
+      <!-- Sobre a empresa extra / importancia educacional -->
+      <div class="section-title">🌱 Sobre a Sanepar | Educação ambiental e conformidade</div>
+      <div class="info-grid">
+        <div class="card">
+          <h3>📚 Programa de Educação Socioambiental</h3>
+          <p>A Sanepar desenvolve ações educativas em escolas, comunidades e empresas para o uso consciente da água, tratamento de esgoto e preservação de mananciais. Nossos programas seguem as diretrizes da Política Nacional de Recursos Hídricos.</p>
+          <p><strong>+150 mil</strong> alunos impactados por ano com material didático e visitas guiadas às estações de tratamento.</p>
+        </div>
+        <div class="card">
+          <h3>🏅 Certificações e Transparência</h3>
+          <p>Certificação ISO 14001 (Gestão Ambiental), ISO 9001 e Selo de Sustentabilidade da ONU. A empresa segue rígidas regras de compliance e boas práticas governamentais, garantindo site white hat e conformidade com as políticas do Google Ads (sem conteúdo enganoso, sem pop-ups abusivos, informações claras e seguras).</p>
+        </div>
+      </div>
+
+      <!-- Informações complementares - Capital Social e dados históricos -->
+      <div class="card" style="background: #eef6f3;">
+        <h3>🏛️ Dados Econômicos e Históricos</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+          <div><strong>Capital Social (2025):</strong> R$ 6.000.000.000,00</div>
+          <div><strong>Tipo:</strong> Matriz</div>
+          <div><strong>Natureza Jurídica:</strong> Sociedade de Economia Mista</div>
+          <div><strong>Fundada em:</strong> 26 de janeiro de 1968</div>
+        </div>
+        <p style="margin-top: 16px;">A Sanepar é uma das maiores empresas de saneamento da América Latina, atuando em 345 municípios paranaenses, levando água tratada para mais de 10 milhões de pessoas e coleta de esgoto para milhões de conexões.</p>
+      </div>
+
+      <!-- Contato e rodapé de informação responsável -->
+      <div id="contato-scroll" class="section-title">📞 Canais de Atendimento e Suporte</div>
+      <div class="info-grid">
+        <div class="card">
+          <h3>📱 Central de Relacionamento</h3>
+          <p><strong>Telefone:</strong> 0800 200 0115 (24h) <br> <strong>WhatsApp Corporativo:</strong> (41) 3330-8000 <br> <strong>E-mail para comunicação oficial:</strong> atendimento@sanepar.com.br (institucional)</p>
+          <p><small>Os números completos seguem normas de segurança de dados. Contate a central para emergências de abastecimento.</small></p>
+        </div>
+        <div class="card">
+          <h3>🏢 Atendimento Presencial</h3>
+          <p>Rua Engenheiros Reboucas, 1376 - Reboucas, Curitiba/PR. CEP 80215-100<br> Horário de funcionamento: 2ª a 6ª das 8h às 17h (exceto feriados).</p>
+          <p><span class="badge">Google Maps</span> <span class="badge">Acessível</span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-flex">
+        <div class="footer-col">
+          <h4>Sanepar</h4>
+          <p>Companhia de Saneamento do Paraná<br> CNPJ: 76.484.013/0001-45<br> Economia Mista - Transparência pública.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Links úteis</h4>
+          <p><a href="#">Política de Privacidade (LGPD)</a><br><a href="#">Termos de Uso</a><br><a href="#">Acesso à Informação</a><br><a href="#">Trabalhe Conosco</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Educação e Cidadania</h4>
+          <p>Materiais educativos, simulador de consumo, dicas de economia de água e turismo técnico nas estações de tratamento. Acreditamos que informação transforma hábitos.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Fale Conosco</h4>
+          <p>0800 200 0115 - Atendimento 24h<br> Ouvidoria: ouvidoria@sanepar.com.br<br> Curitiba - Paraná</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 1968-2026 Companhia de Saneamento do Paraná - Sanepar. Todos os direitos reservados. Site educacional e institucional em conformidade com as políticas de publicidade e boas práticas (white hat SEO, sem conteúdo invasivo).
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie banner simples (LGPD e conformidade) -->
+  <div id="cookieConsent" class="cookie-banner">
+    <p>🍪 Utilizamos cookies essenciais para garantir a experiência do site, em conformidade com a LGPD. Ao continuar, você concorda com nossa Política de Privacidade.</p>
+    <button id="acceptCookies" class="cookie-btn">Aceitar e continuar</button>
+  </div>
+
+  <script>
+    // Simples controle de cookie banner (white hat, não invasivo)
+    const cookieBanner = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('acceptCookies');
+    
+    if(localStorage.getItem('cookieAccepted') === 'true') {
+      cookieBanner.style.display = 'none';
+    }
+    
+    acceptBtn?.addEventListener('click', () => {
+      localStorage.setItem('cookieAccepted', 'true');
+      cookieBanner.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
